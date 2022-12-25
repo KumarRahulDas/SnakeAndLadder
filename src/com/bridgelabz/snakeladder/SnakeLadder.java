@@ -11,9 +11,16 @@ public class SnakeLadder {
     public static int getRandomInteger(int maximum, int minimum){
         return ((int) (Math.random()*(maximum - minimum))) + minimum;
     }
+
+
+    public static void main(String[] args){
+        System.out.println("Welcome To Snake And Ladder Game Program");
+        int positionA = 0;
+
     public static void main(String[] args){
         System.out.println("Welcome To Snake And Ladder Game Program");
         t positionA = 0;
+
 
         while(positionA < MAX_POSITION) {
 
@@ -28,10 +35,23 @@ public class SnakeLadder {
 
                 case LADDER:
                     positionA += dice;
+
+                    if(positionA > MAX_POSITION) {
+                        positionA = positionA-dice;
+                    }
+
                     break;
 
                 case SNAKE:
-                    positionA -= dice;
+                    positionA -= 
+                    if(positionA < MIN_POSITION ) {
+                        positionA = 0;
+                    }
+                    break;
+            }
+            // System.out.println("end : "+positionA);
+        }
+
                     if(positionA < MIN_POSITION )
                         positionA = 0;
                     break;
@@ -79,6 +99,7 @@ public class SnakeLadder {
 
         int dice = getRandomInteger(7,1);
         System.out.println(dice);
+
 
 
 
