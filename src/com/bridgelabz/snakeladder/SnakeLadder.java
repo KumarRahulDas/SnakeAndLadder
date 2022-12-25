@@ -2,6 +2,9 @@ package com.bridgelabz.snakeladder;
 
 public class SnakeLadder {
 
+
+
+
     private static final int NO_PLAY = 0;
     private static final int LADDER = 1;
     private static final int SNAKE = 2;
@@ -16,6 +19,12 @@ public class SnakeLadder {
     public static void main(String[] args){
         System.out.println("Welcome To Snake And Ladder Game Program");
         int positionA = 0;
+        int diceCount = 0;
+
+
+    public static void main(String[] args){
+        System.out.println("Welcome To Snake And Ladder Game Program");
+        int positionA = 0;
 
     public static void main(String[] args){
         System.out.println("Welcome To Snake And Ladder Game Program");
@@ -25,9 +34,16 @@ public class SnakeLadder {
         while(positionA < MAX_POSITION) {
 
             int dice = getRandomInteger(7,1);
+
+            diceCount ++;
+//			System.out.println("dice : "+dice);
+            int checkPlay = (int) Math.floor(Math.random()*10)%3;
+//			System.out.println("checkplay : "+checkPlay);
+
             System.out.println("dice : "+dice);
             int checkPlay = (int) Math.floor(Math.random()*10)%3;
             System.out.println("checkplay : "+checkPlay);
+
 
             switch(checkPlay) {
                 case NO_PLAY:
@@ -39,16 +55,31 @@ public class SnakeLadder {
                     if(positionA > MAX_POSITION) {
                         positionA = positionA-dice;
                     }
+                    break;
+
+                case SNAKE:
+                    positionA -= dice;
+
+
+                    if(positionA > MAX_POSITION) {
+                        positionA = positionA-dice;
+                    }
 
                     break;
 
                 case SNAKE:
                     positionA -= 
+
                     if(positionA < MIN_POSITION ) {
                         positionA = 0;
                     }
                     break;
             }
+
+            System.out.println("Position after Die Roll "+diceCount+" : "+positionA);
+        }
+        System.out.println("Total Dice Rolls : "+diceCount);
+
             // System.out.println("end : "+positionA);
         }
 
@@ -99,6 +130,7 @@ public class SnakeLadder {
 
         int dice = getRandomInteger(7,1);
         System.out.println(dice);
+
 
 
 
